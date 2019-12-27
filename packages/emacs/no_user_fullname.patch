@@ -1,10 +1,10 @@
-diff -u -r ../emacs-24.3/src/editfns.c ./src/editfns.c
---- ../emacs-24.3/src/editfns.c	2013-01-01 21:37:17.000000000 +0100
-+++ ./src/editfns.c	2014-02-19 03:21:55.000000000 +0100
-@@ -1304,7 +1304,7 @@
+diff -u -r ../emacs.orig/src/editfns.c ./src/editfns.c
+--- ../emacs.orig/src/editfns.c 2019-12-26 17:20:12.000000000 +0100
++++ ./src/editfns.c     2019-12-27 14:19:14.204517971 +0100
+@@ -1250,7 +1250,7 @@
    if (!pw)
      return Qnil;
- 
+
 -  p = USER_FULL_NAME;
 +  p = "unknown";
    /* Chop off everything after the first comma. */
