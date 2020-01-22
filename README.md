@@ -1,14 +1,16 @@
 # Termux packages
 
-[![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
-
-[![build status](https://api.cirrus-ci.com/github/termux/termux-packages.svg?branch=master)](https://cirrus-ci.com/termux/termux-packages)
+[![Packages last build status](https://github.com/termux/termux-packages/workflows/Packages/badge.svg)](https://github.com/termux/termux-packages/actions)
+[![Docker image status](https://github.com/termux/termux-packages/workflows/Docker%20image/badge.svg)](https://hub.docker.com/r/termux/package-builder)
+[![Repology metadata status](https://github.com/termux/termux-packages/workflows/Repology%20metadata/badge.svg)](https://repology.org/repository/termux)
 [![Join the chat at https://gitter.im/termux/termux](https://badges.gitter.im/termux/termux.svg)](https://gitter.im/termux/termux)
+
+[![Powered by JFrog Bintray](./.github/static/powered-by-bintray.png)](https://bintray.com)
 
 This project contains scripts and patches to build packages for the [Termux]
 Android application.
 
-There available packages only from main set. We have some additional
+The packages available here are only from main set. We have some additional
 repositories:
 
 - https://github.com/termux/game-packages
@@ -21,32 +23,21 @@ repositories:
 
 - https://github.com/termux/termux-root-packages
 
-  All packages which usable only on rooted devices. Some stuff available
-  here requiring custom kernel (like `aircrack-ng` or `lxc`).
+  Packages which can be used only on rooted devices. Some stuff available
+  here requires custom kernel (like `aircrack-ng` or `lxc`).
 
 - https://github.com/termux/unstable-packages
 
-  Staging repository. Packages that are not stable available only here. New
-  packages most likely will be placed here too.
+  Staging repository. Packages that are not stable are only available here.Most likely, new packages will also be placed here.
 
 - https://github.com/termux/x11-packages
 
-  Packages requiring X11 Windowing System.
+  Packages that require X11 Windows System.
 
 Termux package management quick how-to available on https://wiki.termux.com/wiki/Package_Management.
 To learn about using our build environment, read the [Developer's Wiki].
 
 ## Project structure
-
-There 2 main branches available:
-
-- [master] - packages for Android 7.0 or higher.
-
-  Packages are built automatically by [CI] and published on [Bintray].
-
-- [android-5] - packages for Android versions 5.x - 6.x.
-
-  Packages are built by @fornwall and published on https://termux.net.
 
 Directories:
 

@@ -1,12 +1,15 @@
 TERMUX_PKG_HOMEPAGE=https://www.isc.org/downloads/bind/
 TERMUX_PKG_DESCRIPTION="Clients provided with BIND"
 TERMUX_PKG_LICENSE="MPL-2.0"
-TERMUX_PKG_VERSION=9.14.8
-TERMUX_PKG_SRCURL="ftp://ftp.isc.org/isc/bind9/${TERMUX_PKG_VERSION}/bind-${TERMUX_PKG_VERSION}.tar.gz"
-TERMUX_PKG_SHA256=e545aa75ced6695a9bf4b591606ef00260fb3c055c2865b299cfe0fe6eeea076
-TERMUX_PKG_DEPENDS="openssl, readline, resolv-conf, zlib"
+TERMUX_PKG_VERSION=9.15.8
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SRCURL="ftp://ftp.isc.org/isc/bind9/${TERMUX_PKG_VERSION}/bind-${TERMUX_PKG_VERSION}.tar.xz"
+TERMUX_PKG_SHA256=7397a92575f2a63549727b22b7705a3314fadbbb1829d49e7c4e5e77fb13d919
+TERMUX_PKG_DEPENDS="openssl, readline, resolv-conf, zlib, libuv"
 TERMUX_PKG_BREAKS="dnsutils-dev"
 TERMUX_PKG_REPLACES="dnsutils-dev"
+TERMUX_PKG_BUILD_IN_SRC=true
+
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --disable-linux-caps
 --without-python
@@ -32,7 +35,6 @@ termux_step_pre_configure() {
 
 	_RESOLV_CONF=$TERMUX_PREFIX/etc/resolv.conf
 	CFLAGS+=" $CPPFLAGS -DRESOLV_CONF=\\\"$_RESOLV_CONF\\\""
-	LDFLAGS+=" -llog"
 }
 
 termux_step_make() {
